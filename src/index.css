@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.navbar {
+  max-height: 70px;
+}
+
+.nav-logo {
+  margin-top: 7%;
+  max-height: 100px;
+}
+
+/*---- GameBoard ----*/
+
+.gameboard-container {
+  background-image: url('../public/gameboard-bg.png');
+}
