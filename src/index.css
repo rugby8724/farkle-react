@@ -24,5 +24,5 @@ code {
 /*---- GameBoard ----*/
 
 .gameboard-container {
-  background-image: url('../public/gameboard-bg.png');
+  background-color: green;
 }
