@@ -1,17 +1,27 @@
-import React from 'react'
+import {React} from 'react'
 
-import { Row, Col, Button } from 'react-bootstrap'
-import { useSelector, useDispatch } from 'react-redux'
+import { Row, Col, } from 'react-bootstrap'
+import { useSelector} from 'react-redux'
 
 import Dice from './Dice'
 
 
 
 
-
 const GameBoard = () => {
-  const dispatch = useDispatch()
-  const {rolledDice, diceToRoll} = useSelector((state) => state.dice)
+  const {rolledDice, selectedDice} = useSelector((state) => state.dice)
+
+  const clickedDice = () =>{
+   let dice =[]
+    for(let setOfDice of selectedDice){
+      setOfDice.forEach(element => {
+        dice.push(element)
+      });
+    }
+    return dice
+  }
+
+  let scoringDice = clickedDice()
 
   return (
     <>
@@ -19,15 +29,19 @@ const GameBoard = () => {
       <Row>
         {rolledDice.map((dice, diceIndex) =>(
           <Col key={diceIndex} md={2}>
-            <p><Dice dice={dice} /></p>
+            <Dice diceValue={dice.diceValue} diceId={dice.diceId} fromSection='rolled' />
           </Col>
         ))}
-
       </Row>
-      
-      {/* <div>Hello</div> */}
-
+      <Row>
+       {scoringDice.map((dice)=>(
+        <Col key={dice.diceId} md={2}>
+        <Dice diceValue={dice.diceValue} diceId={dice.diceId} fromSection='scoring'/>
+        </Col>
+       ))}
+      </Row>
     </div>
+   
 
     </>
     

@@ -12,17 +12,30 @@ code {
     monospace;
 }
 
-.navbar {
-  max-height: 70px;
+/*---- NavBar ----*/
+
+.logo-container{
+  color: red;
+  font-size: x-large;
+  font-weight: 600;
 }
 
-.nav-logo {
-  margin-top: 7%;
-  max-height: 100px;
+.nav-links{
+  color: whitesmoke;
+  font-weight: 500;
+  font-size: large;
 }
 
 /*---- GameBoard ----*/
 
 .gameboard-container {
   background-color: green;
+}
+
+
+/*---- ScoreBoard ----*/
+
+.score-container {
+  background-color: brown;
+  color: white;
 }
