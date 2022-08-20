@@ -16,6 +16,7 @@ const LoginForm = () => {
 
   const handleSubmit = (e) =>{
     e.preventDefault()
+    setWrongInfo(false)
     const account = users.find((player) => player.username == username)
     console.log(account)
 

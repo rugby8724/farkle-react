@@ -2,6 +2,7 @@ import React from 'react'
 
 import { useSelector, useDispatch } from 'react-redux'
 import { Row, Col, Image, Button } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 
 import GameBoard from '../components/GameBoard'
 import ScoreBoard from '../components/ScoreBoard'
@@ -12,6 +13,11 @@ import { addTurnScore } from '../features/scoreSlice'
 
 const GameScreen = () => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const {currentPlayer} = useSelector((state) => state.user)
+
+  if(!currentPlayer){navigate('/')}
 
 
 

@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+.dog-img{
+  max-width: 25%;
+  height: auto;
+}
+
 /*---- NavBar ----*/
 
 .logo-container{
